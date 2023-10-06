@@ -533,7 +533,7 @@ let
             auth ${p11.control} ${pkgs.pam_p11}/lib/security/pam_p11.so ${pkgs.opensc}/lib/opensc-pkcs11.so
           '') +
           (let u2f = config.security.pam.u2f; in optionalString cfg.u2fAuth (''
-              auth ${u2f.control} ${pkgs.pam_u2f}/lib/security/pam_u2f.so ${optionalString u2f.debug "debug"} ${optionalString (u2f.authFile != null) "authfile=${u2f.authFile}"} ''
+              auth ${u2f.control} ${pkgs.pam_u2f}/lib/security/pam_u2f.so ${optionalString (u2f.debugFile != null) "debug debug_file-${u2f.debugFile}"} ${optionalString (u2f.authFile != null) "authfile=${u2f.authFile}"} ''
                 + ''${optionalString u2f.interactive "interactive"} ${optionalString u2f.cue "cue"} ${optionalString (u2f.appId != null) "appid=${u2f.appId}"} ${optionalString (u2f.origin != null) "origin=${u2f.origin}"}
           '')) +
           optionalString cfg.usbAuth ''
@@ -1087,11 +1087,12 @@ in
         '';
       };
 
-      debug = mkOption {
+      debugFile = mkOption {
         default = false;
-        type = types.bool;
+        type = with types; nullOr path;
         description = lib.mdDoc ''
-          Debug output to stderr.
+          File for saving debug logs. This implicitly sets debug to true.
+          The file must be create manually or through another process, u2f_pam will not create the file automatically.
         '';
       };
 
