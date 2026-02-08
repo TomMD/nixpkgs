@@ -1,8 +1,8 @@
 diff --git a/Cargo.lock b/Cargo.lock
-index 0194c34ed2..0d58655f70 100644
+index c72587d0e4..87ce9be033 100644
 --- a/Cargo.lock
 +++ b/Cargo.lock
-@@ -1419,14 +1419,14 @@ dependencies = [
+@@ -2177,14 +2177,14 @@ dependencies = [
  
  [[package]]
  name = "crossbeam-epoch"
@@ -13,7 +13,7 @@ index 0194c34ed2..0d58655f70 100644
 +checksum = "2d2fe95351b870527a5d09bf563ed3c97c0cffb87cf1c78a591bf48bb218d9aa"
  dependencies = [
 + "autocfg",
-  "cfg-if 1.0.0",
+  "cfg-if 1.0.4",
   "crossbeam-utils",
 - "lazy_static",
 - "memoffset 0.6.4",
@@ -22,7 +22,7 @@ index 0194c34ed2..0d58655f70 100644
  ]
  
  [[package]]
-@@ -3118,15 +3118,6 @@ dependencies = [
+@@ -4605,15 +4605,6 @@ dependencies = [
   "libc",
  ]
  
@@ -37,13 +37,4 @@ index 0194c34ed2..0d58655f70 100644
 -
  [[package]]
  name = "memoffset"
- version = "0.7.1"
-diff --git a/Cargo.toml b/Cargo.toml
-index 2ff2094d67..a3ace4459a 100644
---- a/Cargo.toml
-+++ b/Cargo.toml
-@@ -665,4 +665,4 @@
- [patch.crates-io]
- # for details, see https://github.com/anza-xyz/crossbeam/commit/fd279d707025f0e60951e429bf778b4813d1b6bf
--crossbeam-epoch = { git = "https://github.com/anza-xyz/crossbeam", rev = "fd279d707025f0e60951e429bf778b4813d1b6bf" }
-+# crossbeam-epoch = { git = "https://github.com/anza-xyz/crossbeam", rev = "fd279d707025f0e60951e429bf778b4813d1b6bf" }
+ version = "0.9.1"

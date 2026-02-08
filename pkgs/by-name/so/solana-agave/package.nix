@@ -25,13 +25,13 @@ rustPlatform.buildRustPackage (finalAttrs: {
   version = "2.3.12";
 
   src = fetchFromGitHub {
-    owner = "anza-xyz";
+    owner = "TomMD";
     repo = "agave";
-    tag = "v${finalAttrs.version}";
-    hash = "sha256-25UgiC5jAnlNE8Z7WrQRIviCuFp4zg57ddYA4h0qJ6U=";
+    rev = "f6b338ecf6bc80b46e8f6ed5e347eb20180af4ba";  # FOLLOW fix-platform-tools-path-handling branch
+    hash = "sha256-Cp4n2+6pxE3wq78SG28i82+5p8Xa50UYy2cjx0lllzs=";
   };
 
-  cargoHash = "sha256-SVngabz9mrYNn7DlL7Rh7llvO4GmJdt5vpXVcjwqtNg=";
+  cargoHash = "sha256-zfydH8HiRjJDw4wH/3sF3tch+NIaHUf+2TLrNDWPAb0=";
 
   # For the same reason as discussed in solana-cli derivation (crossbeam softlink), the no_atomic file is missing
   # and either must somehow be rendered unneeded (using an upstream package) or replaced. A cleaner, non-behavior-changing,
