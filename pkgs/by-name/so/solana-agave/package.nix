@@ -31,13 +31,9 @@ rustPlatform.buildRustPackage (finalAttrs: {
     hash = "sha256-Cp4n2+6pxE3wq78SG28i82+5p8Xa50UYy2cjx0lllzs=";
   };
 
-  cargoHash = "sha256-aCx24p5Cda9F5G9/aENRieRyZODUV4MkQ1pYIQ/wX4o=";
+  cargoHash = "sha256-zfydH8HiRjJDw4wH/3sF3tch+NIaHUf+2TLrNDWPAb0=";
 
-  # For the same reason as discussed in solana-cli derivation (crossbeam softlink), the no_atomic file is missing
-  # and either must somehow be rendered unneeded (using an upstream package) or replaced. A cleaner, non-behavior-changing,
-  # solution would be to commit the file to the repo fork (replacing the softlink).
   cargoPatches = [
-    ./crossbeam-epoch.patch
   ];
 
   nativeBuildInputs = [
@@ -90,8 +86,8 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   meta = {
     description = "Solana Network Validator";
-    homepage = "https://github.com/anza-xyz/agave";
-    changelog = "https://github.com/anza-xyz/agave/releases/tag/${finalAttrs.version}";
+    homepage = "https://github.com/TomMD/agave";
+    changelog = "https://github.com/TomMD/agave/releases/tag/${finalAttrs.version}";
     license = with lib.licenses; [
       asl20
     ];
