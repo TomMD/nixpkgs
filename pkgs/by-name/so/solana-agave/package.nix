@@ -27,7 +27,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
   src = fetchFromGitHub {
     owner = "TomMD";
     repo = "agave";
-    rev = "f6b338ecf6bc80b46e8f6ed5e347eb20180af4ba";  # FOLLOW fix-platform-tools-path-handling branch
+    rev = "b91351fbd8bae1a6148cff75904c358b187898ee";  # FOLLOW fix-platform-tools-path-handling branch
     hash = "sha256-Cp4n2+6pxE3wq78SG28i82+5p8Xa50UYy2cjx0lllzs=";
   };
 
